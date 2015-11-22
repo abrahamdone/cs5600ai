@@ -54,7 +54,17 @@
   The game itself is based on a hex grid that will look at each cell neighborhood around it to determine its destiny. It will cycle through all six neighborhoods and add up all the values determined by the rule set. This cell will then look up its life/death status based on the number of neighborhood cell value.
 </p>
 
+<p>
+  The following image shows a rule set and all of its values for counting the neighborhood.
+</p>
+
 <img src="source/2dhex.png">
+
+<p>
+  The following image shows the life/death status. The top is the birth status, and the bottom is the death. This table shows that birth will only happen if there is 3 neighbors. The cell will stay alive only if there are 2 or 3 neighbors. This rule is similar to the game of life.
+</p>
+
+<img src="source/ruleLayout.png">
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/abrahamdone/cs5600ai">Evolution of the game of life</a> is maintained by <a href="https://github.com/abrahamdone">abrahamdone</a>.</span>
