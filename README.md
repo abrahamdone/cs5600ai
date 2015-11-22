@@ -1,1 +1,1 @@
-# cs5600ai
+# Evolving the game of life
