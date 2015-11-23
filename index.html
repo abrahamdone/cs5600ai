@@ -51,23 +51,30 @@
 </h3>
 
 <p>
-  The game itself is based on a hex grid that will look at each cell neighborhood around it to determine its destiny. It will cycle through all six neighborhoods and add up all the values determined by the rule set. This cell will then look up its life/death status based on the number of neighborhood cell value.
+  The game itself is based on a hex grid that will look at each cell neighborhood around it to determine its destiny. 
+  It will cycle through all six neighborhoods and add up all the values determined by the rule set. 
+  This cell will then look up its life/death status based on the number of neighborhood cell value.
 </p>
 
 <p>
-  The following image shows a rule set and all of its values for counting the neighborhood. The black is the rule lookup value, and the grey is this rule's counter value.
+  The following image shows a rule set and all of its values for counting the neighborhood. 
+  The black is the rule lookup value, and the grey is this rule's counter value.
 </p>
 
 <img src="source/2dhex.png">
 
 <p>
-  The following image shows the life/death status. The top is the birth status, and the bottom is the death. This table shows that birth will only happen if there is 3 neighbors. The cell will stay alive only if there are 2 or 3 neighbors. This rule is similar to the game of life.
+  The following image shows the life/death status. The top is the birth status, and the bottom is the death. 
+  This table shows that birth will only happen if there is 3 neighbors. 
+  The cell will stay alive only if there are 2 or 3 neighbors. 
+  This rule is similar to the game of life.
 </p>
 
 <img src="source/ruleLayout.png">
 
 <p>
-  Since a hex grid can be represented as a <a class="anchor" href="http://www.redblobgames.com/grids/hexagons/" aria-hidden="true"><span class="octicon octicon-link"></span>grid</a>, all of the calculations on position are simplified by just using a 2D array. This makes calculation easier, but the display will not be complete until it displays a hex grid as well.
+  Since a hex grid can be represented as a <a class="anchor" href="http://www.redblobgames.com/grids/hexagons/" aria-hidden="true"><span class="octicon octicon-link"></span>grid</a>, all of the calculations on position are simplified by just using a 2D array. 
+  This makes calculation easier, but the display will not be complete until it displays a hex grid as well.
 </p>
 
 <h3>
@@ -75,7 +82,9 @@
 </h3>
 
 <p>
-  Since the space I have provided is fairly large (2 to the 46th power) it is hard to find good rule sets with a life/death table. I have decided to search for it using evolution. There is a simple genetic algorithm used to evolve a first randomly selected population to try and find a suitable rule.
+  Since the space I have provided is fairly large (2 to the 46th power) it is hard to find good rule sets with a life/death table.
+  I have decided to search for it using evolution. 
+  There is a simple genetic algorithm used to evolve a first randomly selected population to try and find a suitable rule.
 </p>
 
 <h3>
@@ -83,7 +92,9 @@
 </h3>
 
 <p>
-  I have used the method of set complexity analysis discussed in <a class="anchor" href="http://www.sciencedirect.com/science/article/pii/S030326471300049X/" aria-hidden="true"><span class="octicon octicon-link"></span>this journal article</a> by Nicholas Flann et al.
+  I have used the method of set complexity analysis discussed in <a class="anchor" href="http://www.sciencedirect.com/science/article/pii/S030326471300049X/" aria-hidden="true"><span class="octicon octicon-link"></span>Kolmogorov complexity of epithelial pattern formation: The role of regulatory network configuration</a> by Nicholas Flann et al. 
+  The set complexity is calculated to determine the fitness of each genome.
+  After an initial "burn in" period, the next few states are saved and the set complexity is determined from the complexity.
 </p>
 
 <h3>
