@@ -25,69 +25,12 @@
 </center>
 
 <h3>
-  <a id="background" class="anchor" href="#background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background
+  <a id="background" class="anchor" href="background.html" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background
 </h3>
-
-<p>
-  <a class="anchor" href="http://www.redblobgames.com/grids/hexagons/" aria-hidden="true"><span class="octicon octicon-link"></span>Hexagonal grids</a>, 
-  <a class="anchor" href="https://en.wikipedia.org/wiki/Cellular_automaton" aria-hidden="true"><span class="octicon octicon-link"></span>1D cellular automata's</a>,
-  and its two dimensional implementation 
-  <a class="anchor" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" aria-hidden="true"><span class="octicon octicon-link"></span>The Game of Life</a>, 
-  come together in my own blend to make a hexagonal game of life. The space is very large and therefore will be immensely hard to find an "interesting" result.
-  I have decided to use a genetic algorithm to search the space to try and find the interesting examples.
-  Evolving the game of life.
-</p>
 
 <h3>
-  <a id="rules" class="anchor" href="#rules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rules
+  <a id="rules" class="anchor" href="rules.html" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rules
 </h3>
-
-<p>
-  The game itself is based on a hex grid that will look at each cell neighborhood around it to determine its destiny. 
-  It will cycle through all six neighborhoods and add up all the values determined by the rule set. 
-  This cell will then look up its life/death status based on the number of neighborhood cell value.
-</p>
-
-<p>
-  The following image shows a rule set and all of its values for counting the neighborhood. 
-  The black is the rule lookup value, and the grey is this rule's counter value.
-</p>
-
-<center>
-  <img src="source/2dhex.png">
-</center>
-
-<p>
-  For the following sample region each of the neighborhoods are compared vs the rule and the values of the rule is totaled up. The sample region with our sample rule would have a value of 0 since each neighborhood had a value of 0 in the rule set.
-</p>
-
-<center>
-  <img src="source/2dhexrule.png">
-</center>
-
-<p>
-  The following shows the life/death status. The top is the birth status, and the bottom is the death. 
-  This table shows that birth will only happen if there is 3 neighbors. 
-  The cell will stay alive only if there are 2 or 3 neighbors. 
-  This rule is similar to the game of life.
-</p>
-
-<center>
-  <img src="source/ruleLayout.png">
-</center>
-
-<p>
-  Since a hex grid can be represented as a <a class="anchor" href="http://www.redblobgames.com/grids/hexagons/#coordinates" aria-hidden="true"><span class="octicon octicon-link"></span>grid</a>, all of the calculations on position are simplified by just using a 2D array. 
-  This makes calculation easier, but the display will not be complete until it displays a hex grid as well.
-</p>
-
-<p>
-  The following animation is the rule that was just described in the example. I think this is a good example of an interesting rule.
-</p>
-
-<center>
-  <img src="source/4926160427416.gif">
-</center>
 
 <h3>
   Evolution
