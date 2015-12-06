@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Evolution of 2D cellular automata with a hexagonal rule set: Rules by abrahamdone</title>
+    <title>Evolution of 2D cellular automata with a hexagonal rule set: Evolution by abrahamdone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Rules</h1>
+      <h1 class="project-name">Evolution</h1>
       <h2 class="project-tagline"></h2>
       <a href="https://abrahamdone.github.io/cs5600ai" class="btn">Home</a>
       <a href="https://github.com/abrahamdone/cs5600ai" class="btn">View on GitHub</a>
@@ -22,9 +22,7 @@
     <section class="main-content">
       
 <p>
-  Since the space I have provided is fairly large (2 to the 46th power) it is hard to find good rule sets with a life/death table.
-  I have decided to search for it using evolution. 
-  There is a simple genetic algorithm used to evolve a first randomly selected population to try and find a suitable rule.
+  The goal of finding an interesting rule set in this vast space (2 to the 46th power or 70,368,744,177,664 possible rules) is quite daunting. Random search can find some results, but can it actually be searched to find the interesting sets? The solution to this search problem that I thought would be interesting was an evolutionary approach. Effectively evolving a game of life. I utilized a simple genetic algorithm which produced a set of random rule sets as genomes and used this random set evolve an interesting rule set.
 </p>
 
 <h3>
@@ -32,9 +30,15 @@
 </h3>
 
 <p>
-  I have used the method of set complexity analysis discussed in <a class="anchor" href="http://www.sciencedirect.com/science/article/pii/S030326471300049X/" aria-hidden="true"><span class="octicon octicon-link"></span>Kolmogorov complexity of epithelial pattern formation: The role of regulatory network configuration</a> by Nicholas Flann et al. 
-  The set complexity is calculated to determine the fitness of each genome.
-  After an initial "burn in" period, the next few states are saved and the set complexity is determined from the complexity.
+  I have used the method of set complexity analysis discussed in <a class="anchor" href="http://www.sciencedirect.com/science/article/pii/S030326471300049X/" aria-hidden="true"><span class="octicon octicon-link"></span>Kolmogorov complexity of epithelial pattern formation: The role of regulatory network configuration</a> by Nicholas Flann et al. The set complexity is calculated to determine the fitness of each genome. After an initial "burn in" period, the next few states are saved and the set complexity is determined from the complexity.
+</p>
+
+<p>
+  The saved states are all compared against each other, by a process of combining and compressing the combined states. The math done on these results in a fitness evaluation. This value is used to determine the overall chance a genome has over another to be selected to pass on to the next generation and combine its rule set with another fit function to produce child rules.
+</p>
+
+<p>
+  The hope is that this would be a suitable method to find interesting rule sets.
 </p>
 
 <h3>
@@ -42,8 +46,7 @@
 </h3>
 
 <p>
-  So far I have run through a few populations to find a few interesting results. 
-  They are still only displayed using a grid at the moment.
+  After running a few populations through a few generations I found a few rule sets that are complex, as determined by the evaluation function. They are provided below.
 </p>
 
 <center>
@@ -54,10 +57,21 @@
 </center>
 
 <p>
-  Sadly my favorite so far is from a random start (same rule as shown in image above):
+  The following is a graph showing the progression of the population through the generations. We can see that the best is found steadily and sometimes flat lines for a few generations.
 </p>
 
-<img src="source/4926160427416.gif">
+<center>
+  <img src="source/graph.png">
+</center>
+
+<p>
+  I have come to the conclusion that complexity doesn't necessary mean interesting. My favorite result was found by random. And it didn't even score very high at all. Where as the rules that the evolution finds are around 650, my favorite rule only scored 200. It is the rule that I used in the rule explanation. And it is below for comparison.
+</p>
+
+<center>
+  <img src="source/4926160427416.gif">
+</center>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/abrahamdone/cs5600ai">Evolution of the game of life</a> is maintained by <a href="https://github.com/abrahamdone">abrahamdone</a>.</span>
 
